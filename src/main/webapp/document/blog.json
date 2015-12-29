@@ -1,0 +1,9 @@
+{
+  "title":"文章标题",
+  "date":"文章创建日期",
+  "update_date":"最后更新日期",
+  "types":"分类1",
+  "tags":["tag1","tag2"],
+  "docunmet_save_link":"文档存储地址",
+  "docunmet_view_link":"文档浏览地址"
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+>
+
+
+    <!-- 导入自定义类库 -->
+    <bean id="fileSystem" class="com.pxx.util.FileSystemManage">
+    </bean>
+    <!-- 导入自定义类库结束 -->
+
+
+
+
+
+    <bean id="fileManageProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:properties/test.fileManage.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="fileManageProperties" />
+    </bean>
+
+    <bean id="siteSettingProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:properties/test.site.setting.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="siteSettingProperties" />
+    </bean>
+
+
+
+    <!-- 注入基础类 -->
+    <bean id="fileManage" class="com.person.util.FileManage">
+    </bean>
+    <bean id="blogSettingProperties" class="com.person.model.properties.BlogSettingProperties">
+    </bean>
+
+
+</beans>

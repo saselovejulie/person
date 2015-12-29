@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd "
+       default-lazy-init="true">
+
+
+
+
+
+
+       <!-- Shiro start -->
+       <!-- Shiro Filter -->
+       <!--<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">-->
+              <!--<property name="securityManager" ref="securityManager"/>-->
+              <!--<property name="loginUrl" value="/login"/>-->
+              <!--<property name="successUrl" value="/home"/>-->
+              <!--<property name="unauthorizedUrl" value="/loginr"/>-->
+              <!--<property name="filterChainDefinitions">-->
+                     <!--<value>-->
+                            <!--/login = anon-->
+                            <!--/api/web/user/login = anon-->
+                            <!--/assets/** = anon-->
+                            <!--/static/** = anon-->
+                            <!--/** = user-->
+                     <!--</value>-->
+              <!--</property>-->
+       <!--</bean>-->
+
+       <!--&lt;!&ndash; 項目自定义的Realm &ndash;&gt;-->
+       <!--<bean id="shiroDbRealm" class="com.ebs.manage.web.shiro.MyRealm"></bean>-->
+
+       <!--<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">-->
+              <!--<property name="realm" ref="shiroDbRealm"/>-->
+       <!--</bean>-->
+
+       <!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>-->
+
+       <!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">-->
+              <!--<property name="securityManager" ref="securityManager"/>-->
+       <!--</bean>-->
+
+       <!--<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>-->
+       <!--<bean id="anno" class="org.apache.shiro.web.filter.authc.AnonymousFilter"/>-->
+
+
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd "
+       default-lazy-init="true">
+
+
+
+
+    <!-- jdbc data source -->
+    <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" >
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/ebs"/>
+        <property name="dbProperties">
+            <props>
+                <prop key="useUnicode">yes</prop>
+                <prop key="characterEncoding">utf8</prop>
+            </props>
+        </property>
+        <property name="username" value="root"/>
+        <property name="password" value="000000"/>
+        <property name="initialSize" value="5"/>
+        <property name="maxActive" value="10"/>
+        <property name="minEvictableIdleTimeMillis" value="600000" />
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>
